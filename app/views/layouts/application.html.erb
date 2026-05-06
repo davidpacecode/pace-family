@@ -41,6 +41,7 @@
         <% end %>
       </header>
 
+
       <nav class="row flex-center">
         <button>Austin Paces</button>
         <button>Family Shares</button>
@@ -50,6 +51,15 @@
 
 
       <%= yield %>
+
+      <div class="row flex-center">
+        <% if authenticated? %>
+          <%= button_to session_path, method: :delete do %>
+            <i class="fa-sharp-duotone fa-regular fa-house-person-leave"></i>
+            <i class="fa-solid fa-right-from-bracket"></i>
+          <% end %>
+        <% end %>
+      </div>
 
       <header class="row flex-center">
         <h4>Made in Austin, Texas <i class="fa-duotone fa-thin fa-taco" style="--fa-primary-color: rgb(185, 185, 14); --fa-secondary-color: rgb(185, 185, 14);"></i></h4>
