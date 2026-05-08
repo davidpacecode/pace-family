@@ -43,8 +43,8 @@
 
 
       <nav class="row flex-center">
-        <button>Austin Paces</button>
-        <button>Family Shares</button>
+        <%= button_to "Austin Paces", shares_path, method: "get", params: { audience: :austin_paces }, class: "button" %>
+        <%= button_to "Family Shares", shares_path, method: "get", params: { audience: :family }, class: "button" %>
         <button>Random</button>
         <%= button_to "About", pages_about_path, method: "get", class: "button" %>
       </nav>

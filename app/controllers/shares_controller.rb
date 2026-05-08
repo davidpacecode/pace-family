@@ -3,7 +3,7 @@ class SharesController < ApplicationController
 
   # GET /shares or /shares.json
   def index
-    @shares = Share.all
+    @shares = params[:audience] ? Share.where(audience: params[:audience]) : Share.all
   end
 
   # GET /shares/1 or /shares/1.json
@@ -65,6 +65,6 @@ class SharesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def share_params
-      params.expect(share: [ :title, :headline, :tags, :audience ])
+      params.expect(share: [ :title, :headline, :tags, :audience, :body ])
     end
 end

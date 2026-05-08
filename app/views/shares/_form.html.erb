@@ -28,7 +28,12 @@
 
   <div>
     <%= form.label :audience, style: "display: block" %>
-    <%= form.number_field :audience %>
+    <%= form.select :audience, Share.audiences.keys.map { |a| [a.humanize, a] } %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.rich_text_area :body %>
   </div>
 
   <div>

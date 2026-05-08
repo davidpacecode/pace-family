@@ -2,7 +2,8 @@
 
 <% content_for :title, "Shares" %>
 
-<h1>Shares</h1>
+<h3><%= @shares.select(:audience).distinct.first.audience.humanize %> Shares</h3>
+
 
 <div id="shares">
   <% @shares.each do |share| %>
