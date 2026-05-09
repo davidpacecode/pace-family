@@ -2,10 +2,11 @@
 
 <% content_for :title, "Shares" %>
 
-<h3><%= @shares.select(:audience).distinct.first.audience.humanize %> Shares</h3>
+<div class="row flex-center">
+  <h3><%= @shares.select(:audience).distinct.first.audience.humanize %> Shares</h3>
+</div>
 
-
-<div id="shares">
+<div id="shares" class="row flex-center">
   <% @shares.each do |share| %>
     <%= render share %>
     <p>
@@ -14,4 +15,6 @@
   <% end %>
 </div>
 
-<%= link_to "New share", new_share_path %>
+<div class="row flex-center">
+  <%= link_to "New share", new_share_path %>
+</div>

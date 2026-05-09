@@ -36,16 +36,15 @@
     <div class="paper container">
 
       <header class="row flex-center">
-        <%= link_to root_path, style: "background-image: none;" do %>
+        <%= link_to root_path, style: "background-image: none; color: inherit;" do %>
           <h1>pace.family</h1>
         <% end %>
       </header>
 
-
       <nav class="row flex-center">
         <%= button_to "Austin Paces", shares_path, method: "get", params: { audience: :austin_paces }, class: "button" %>
         <%= button_to "Family Shares", shares_path, method: "get", params: { audience: :family }, class: "button" %>
-        <button>Random</button>
+        <%= button_to "Random", pages_random_path, method: "get", class: "button" %>
         <%= button_to "About", pages_about_path, method: "get", class: "button" %>
       </nav>
 
