@@ -3,7 +3,7 @@
 <% content_for :title, "Shares" %>
 
 <div class="row flex-center">
-  <h3><%= @shares.select(:audience).distinct.first.audience.humanize %> Shares</h3>
+  <h3><%= @shares.select(:audience).distinct.first&.audience&.humanize %> Shares</h3>
 </div>
 
 <div id="shares" class="row flex-center">
