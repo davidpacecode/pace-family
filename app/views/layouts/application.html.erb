@@ -41,6 +41,16 @@
         <% end %>
       </header>
 
+      <div class="row flex-center">
+        <% if authenticated? %>
+          <% if Current.user.nickname? %>
+            <span><%= "Hello, #{Current.user.nickname}!" %></span>
+          <% else %>
+            <span><%= "Hello, #{Current.user.first_name}!" %></span>
+          <% end %>
+        <% end %>
+      </div>
+
       <nav class="row flex-center">
         <%= button_to "Austin Paces", shares_path, method: "get", params: { audience: :austin_paces }, class: "button" %>
         <%= button_to "Family Shares", shares_path, method: "get", params: { audience: :family }, class: "button" %>
