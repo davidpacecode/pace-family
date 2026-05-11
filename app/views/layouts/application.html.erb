@@ -62,23 +62,15 @@
       <%= yield %>
 
       <div class="row flex-center">
-        <% if false %>
-          <% if authenticated? %>
-            <div class="popover popover-left">
-              <%= button_to edit_user_path do %>
-                <i class="fa-sharp-duotone fa-regular fa-user-pen"></i>
-              <% end %>
-              <div class="popover-content">
-                <p>Edit Profile</p>
-              </div>
-            </div>
-          <% end %>
+        <% if authenticated? %>
+          <button popover-left="Edit Profile" onclick="window.location.href='<%= settings_root_path %>'">
+            <i class="fa-sharp-duotone fa-regular fa-user-pen"></i>
+          </button>
         <% end %>
 
         <% if authenticated? %>
-          <%= button_to session_path, method: :delete do %>
+          <%= button_to session_path, method: :delete, form: { "popover-right": "Log out" } do %>
             <i class="fa-sharp-duotone fa-regular fa-house-person-leave"></i>
-            <i class="fa-solid fa-right-from-bracket"></i>
           <% end %>
         <% end %>
       </div>
