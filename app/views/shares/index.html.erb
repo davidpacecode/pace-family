@@ -8,10 +8,14 @@
 
 <div id="shares" class="row flex-center">
   <% @shares.each do |share| %>
-    <%= render share %>
-    <p>
-      <%= link_to "Show this share", share %>
-    </p>
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h4 class="card-title"><%= share.title %></h4>
+        <h5 class="card-subtitle"><%= share.headline %></h5>
+        <p class="card-text"><%= share.body %></p>
+        <a class="card-link" href="#"><%= link_to "Read more", share %></a>
+      </div>
+    </div>
   <% end %>
 </div>
 
