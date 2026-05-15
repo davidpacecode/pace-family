@@ -6,18 +6,18 @@
   <h3><%= @shares.select(:audience).distinct.first&.audience&.humanize %> Shares</h3>
 </div>
 
-<div id="shares" class="row flex-center">
-  <% @shares.each do |share| %>
-    <div class="card" style="width: 20rem;">
-      <div class="card-body">
-        <h4 class="card-title"><%= share.title %></h4>
-        <h5 class="card-subtitle"><%= share.headline %></h5>
-        <p class="card-text"><%= share.body %></p>
-        <a class="card-link" href="#"><%= link_to "Read more", share %></a>
+  <% @shares.each_with_index do |share, index| %>
+    <div id="shares_<%= index %>" class="row flex-center">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title"><%= share.title %></h4>
+          <h5 class="card-subtitle"><%= share.headline %></h5>
+          <p class="card-text"><%= share.body %></p>
+          <a class="card-link" href="#"><%= link_to "Read more", share %></a>
+        </div>
       </div>
     </div>
   <% end %>
-</div>
 
 <div class="row flex-center">
   <%= link_to "New share", new_share_path %>
