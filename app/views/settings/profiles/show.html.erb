@@ -21,6 +21,11 @@
   </div>
 
   <div>
+    <%= form.label :role, style: "display: block" %>
+    <%= form.select :role, User.roles.keys.map { |r| [r.humanize, r] } %>
+  </div>
+
+  <div>
     <%= form.submit "Update profile" %>
   </div>
 <% end %>

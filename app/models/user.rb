@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
+  enum :role, { austin_paces: 0, family: 1, everyone: 2 }
+
   def full_name
     "#{first_name} #{last_name}"
   end
