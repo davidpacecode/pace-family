@@ -20,10 +20,12 @@
     <%= form.text_field :nickname, required: true, autocomplete: "nickname" %>
   </div>
 
-  <div>
-    <%= form.label :role, style: "display: block" %>
-    <%= form.select :role, User.roles.keys.map { |r| [r.humanize, r] } %>
-  </div>
+  <% if Current.user.role == :admin %>
+    <div>
+      <%= form.label :role, style: "display: block" %>
+      <%= form.select :role, User.roles.keys.map { |r| [r.humanize, r] } %>
+    </div>
+  <% end %>
 
   <div>
     <%= form.submit "Update profile" %>
