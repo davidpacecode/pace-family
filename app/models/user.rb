@@ -11,4 +11,9 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def can_see?(share)
+    return true if admin?
+    User.roles[role] <= Share.audiences[share.audience] + 1
+  end
 end

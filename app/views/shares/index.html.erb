@@ -7,16 +7,20 @@
 </div>
 
   <% @shares.each_with_index do |share, index| %>
-    <div id="shares_<%= index %>" class="row flex-center">
-      <div class="card" style="width: 20rem;">
-        <div class="card-body">
-          <h4 class="card-title"><%= share.title %></h4>
-          <h5 class="card-subtitle"><%= share.headline %></h5>
-          <p class="card-text"><%= share.body %></p>
-          <a class="card-link" href="#"><%= link_to "Read more", share %></a>
+
+    <%= "User.roles[role] = #{User.roles[Current.user.role]} Share.audiences[share.audience] = #{Share.audiences[share.audience]}" %>
+    <% if Current.user.can_see?(share) %>
+      <div id="shares_<%= index %>" class="row flex-center">
+        <div class="card" style="width: 20rem;">
+          <div class="card-body">
+            <h4 class="card-title"><%= share.title %></h4>
+            <h5 class="card-subtitle"><%= share.headline %></h5>
+            <p class="card-text"><%= share.body %></p>
+            <a class="card-link" href="#"><%= link_to "Read more", share %></a>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 
 <div class="row flex-center">
