@@ -39,6 +39,7 @@
 
   <body>
     <wa-page>
+
       <header slot="header">
         <%= render "layouts/header" %>
       </header>
@@ -48,7 +49,9 @@
       </nav>
 
       <main>
-        <%= yield %>
+        <wa-card>
+          <%= yield %>
+        </wa-card>
       </main>
 
       <footer slot="footer">

@@ -2,3 +2,8 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "reactionview"
+
+import "trix"
+import "@rails/actiontext"
+
+import "lexxy"
