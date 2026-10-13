@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :categories
   resource :session
   resources :passwords, param: :token
   get "pages/home"
