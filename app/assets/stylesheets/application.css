@@ -8,3 +8,370 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/*
+ * pace.family — shared design styles
+ * Built on Web Awesome Pro (Mellow theme). Everything here is layered on
+ * --wa-* tokens so it follows the theme, light/dark, and any palette swap.
+ * Goal: the calm, roomy, friendly feel of hey.com / basecamp.com.
+ */
+
+html,
+body {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* One readable column, like Basecamp's marketing pages */
+  --pace-content-width: 64rem;
+  --pace-prose-width: 40rem;
+}
+
+/* ---------- Page frame ---------- */
+
+wa-page main {
+  padding: 0; /* sections own their own gutters so bands can run edge to edge */
+}
+
+.section {
+  padding: var(--wa-space-3xl) var(--wa-space-xl);
+}
+
+.section > .container {
+  max-inline-size: var(--pace-content-width);
+  margin-inline: auto;
+}
+
+.section.tinted {
+  background-color: var(--wa-color-surface-lowered);
+}
+
+.prose,
+.section > .container.prose {
+  max-inline-size: var(--pace-prose-width);
+  margin-inline: auto 0;
+}
+
+.section > .container.prose {
+  margin-inline: max(0px, calc((100% - var(--pace-content-width)) / 2)) auto;
+}
+
+/* ---------- Header (header on desktop, drawer on mobile) ---------- */
+
+.site-header {
+  max-inline-size: calc(var(--pace-content-width) + 2 * var(--wa-space-xl));
+  margin-inline: auto;
+  inline-size: 100%;
+  padding-block: var(--wa-space-s);
+  padding-inline: var(--wa-space-xl);
+}
+
+.brand {
+  color: var(--wa-color-text-normal);
+  text-decoration: none;
+}
+
+.brand-mark {
+  font-size: var(--wa-font-size-2xl);
+  color: var(--wa-color-brand-fill-loud);
+}
+
+.brand-name {
+  font-family: var(--wa-font-family-heading);
+  font-size: var(--wa-font-size-xl);
+  font-weight: var(--wa-font-weight-bold);
+}
+
+.header-nav a {
+  color: var(--wa-color-text-normal);
+  font-weight: var(--wa-font-weight-semibold);
+  text-decoration: none;
+  padding-block: var(--wa-space-2xs);
+  border-block-end: var(--wa-border-width-m) solid transparent;
+}
+
+.header-nav a:hover,
+.header-nav a[aria-current='page'] {
+  border-block-end-color: var(--wa-color-brand-fill-loud);
+}
+
+.drawer-nav a {
+  color: var(--wa-color-text-normal);
+  font-size: var(--wa-font-size-l);
+  font-weight: var(--wa-font-weight-semibold);
+  text-decoration: none;
+  padding-block: var(--wa-space-xs);
+}
+
+.drawer-nav a[aria-current='page'] {
+  color: var(--wa-color-brand-on-quiet);
+}
+
+wa-page[view='mobile'] .header-nav {
+  display: none;
+}
+
+wa-page[view='desktop']::part(navigation) {
+  display: none;
+}
+
+/* ---------- Type ---------- */
+
+.eyebrow {
+  font-size: var(--wa-font-size-s);
+  font-weight: var(--wa-font-weight-bold);
+  letter-spacing: var(--wa-letter-spacing-loose, 0.08em);
+  text-transform: uppercase;
+  color: var(--wa-color-brand-on-quiet);
+  margin: 0;
+}
+
+.headline {
+  font-size: var(--wa-font-size-4xl);
+  line-height: var(--wa-line-height-condensed);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.lede {
+  font-size: var(--wa-font-size-l);
+  color: var(--wa-color-text-quiet);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* The HEY-style highlighter swipe behind a word or two */
+.highlight {
+  background-image: linear-gradient(
+    transparent 55%,
+    var(--wa-color-yellow-80) 55%,
+    var(--wa-color-yellow-80) 90%,
+    transparent 90%
+  );
+  padding-inline: var(--wa-space-3xs);
+}
+
+.wa-dark .highlight {
+  background-image: linear-gradient(
+    transparent 55%,
+    var(--wa-color-yellow-30) 55%,
+    var(--wa-color-yellow-30) 90%,
+    transparent 90%
+  );
+}
+
+/* ---------- Icon circles ---------- */
+
+.circle-icon {
+  font-size: var(--wa-font-size-xl);
+  color: var(--wa-color-brand-on-quiet);
+  background-color: var(--wa-color-brand-fill-quiet);
+  border-radius: var(--wa-border-radius-circle);
+  display: inline-grid;
+  place-items: center;
+  inline-size: 2.25em;
+  block-size: 2.25em;
+  flex: none;
+}
+
+.circle-grid {
+  --min-column-size: 16rem;
+}
+
+/* ---------- Feed (posts on the home page) ---------- */
+
+.feed-section {
+  padding-block-start: 0;
+}
+
+.feed {
+  max-inline-size: var(--pace-prose-width);
+}
+
+.post-meta {
+  font-size: var(--wa-font-size-s);
+  color: var(--wa-color-text-quiet);
+}
+
+.post-author {
+  --size: var(--wa-font-size-2xl);
+  font-size: var(--wa-font-size-2xs);
+}
+
+.post-title {
+  margin: 0;
+  font-size: var(--wa-font-size-2xl);
+  text-wrap: balance;
+}
+
+.post-title a {
+  color: var(--wa-color-text-normal);
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  color: var(--wa-color-brand-on-quiet);
+  text-decoration: underline;
+}
+
+.post-excerpt {
+  margin: 0;
+  font-size: var(--wa-font-size-l);
+  color: var(--wa-color-text-quiet);
+  text-wrap: pretty;
+}
+
+.post-more {
+  font-weight: var(--wa-font-weight-semibold);
+}
+
+/* Stand-in for a post's photo until real images exist */
+.post-photo {
+  background-color: var(--wa-color-surface-lowered);
+  border-radius: var(--wa-border-radius-l);
+  color: var(--wa-color-text-quiet);
+  font-size: var(--wa-font-size-3xl);
+}
+
+.feed-end {
+  margin: 0;
+  color: var(--wa-color-text-quiet);
+  font-style: italic;
+}
+
+.empty-state {
+  text-align: center;
+}
+
+.empty-state h2,
+.empty-state p {
+  margin: 0;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-block-start: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  padding: var(--wa-space-2xl) var(--wa-space-xl);
+  color: var(--wa-color-text-quiet);
+}
+
+.site-footer .container {
+  max-inline-size: var(--pace-content-width);
+  margin-inline: auto;
+}
+
+.site-footer a {
+  color: var(--wa-color-text-quiet);
+}
+
+.icon-heart {
+  color: var(--wa-color-red-50);
+}
+
+.icon-taco,
+.icon-cowboy {
+  --primary-color: var(--wa-color-yellow-70);
+  --secondary-color: var(--wa-color-orange-60);
+  --secondary-opacity: 0.6;
+}
+
+/* ---------- Marwanbot ---------- */
+
+.coming-soon {
+  min-block-size: 70vh;
+  text-align: center;
+}
+
+.bot-badge {
+  font-size: var(--wa-font-size-4xl);
+  color: var(--wa-color-brand-on-quiet);
+  background-color: var(--wa-color-brand-fill-quiet);
+  border-radius: var(--wa-border-radius-circle);
+  padding: var(--wa-space-xl);
+  inline-size: 1em;
+  block-size: 1em;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--wa-transition-normal) var(--wa-transition-easing);
+}
+
+.bot-badge:hover {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.bot-badge:focus-visible {
+  outline: var(--wa-focus-ring);
+  outline-offset: var(--wa-focus-ring-offset);
+}
+
+.mwah {
+  font-family: var(--wa-font-family-heading);
+  font-size: var(--wa-font-size-4xl);
+  font-style: italic;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.mwah .kiss {
+  display: inline-block;
+  color: var(--wa-color-red-50);
+}
+
+.mwah.is-kissing .kiss {
+  animation: pace-smooch var(--wa-transition-slow) var(--wa-transition-easing) 2;
+}
+
+@keyframes pace-smooch {
+  50% {
+    transform: scale(1.35) rotate(-10deg);
+  }
+}
+
+.chat-preview {
+  inline-size: 100%;
+  max-inline-size: var(--pace-prose-width);
+  text-align: start;
+}
+
+.bubble {
+  background-color: var(--wa-color-surface-default);
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  border-radius: var(--wa-border-radius-l);
+  padding: var(--wa-space-s) var(--wa-space-m);
+  max-inline-size: 80%;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.bubble.from-me {
+  align-self: flex-end;
+  border-color: transparent;
+  background-color: var(--wa-color-brand-fill-quiet);
+  color: var(--wa-color-brand-on-quiet);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bot-badge,
+  .mwah.is-kissing .kiss {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 40rem) {
+  .section {
+    padding: var(--wa-space-2xl) var(--wa-space-m);
+  }
+  .site-header {
+    padding-inline: var(--wa-space-m);
+  }
+  .headline,
+  .mwah {
+    font-size: var(--wa-font-size-3xl);
+  }
+}

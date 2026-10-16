@@ -1,11 +1,30 @@
-<%= link_to root_path, class: "wa-link-plain" do %>
-  <div class="wa-cluster">
-    <wa-icon name="house-chimney-heart" family="sharp-duotone" variant="light" style="font-size: 2em;  --primary-color: rgb(116, 192, 252); --secondary-color: rgb(116, 192, 252);"></wa-icon>
-    <span class="wa-font-size-2xl wa-font-weight-bold">Pace Family</span>
-  </div>
-  <div class="wa-cluster">
-    <%= link_to "About", about_path, class: "wa-link-plain wa-font-size-xl wa-font-weight-bold" %>
-    <%= link_to "Login", new_session_path, class: "wa-link-plain wa-font-size-xl wa-font-weight-bold" unless authenticated? %>
-    <%= button_to "Log out", session_path, method: :delete if authenticated? %>
-  </div>
+
+<%= link_to root_path, class: "brand wa-cluster wa-gap-xs" do %>
+  <wa-icon class="brand-mark" name="house-chimney-heart" family="duotone" variant="solid"></wa-icon>
+  <span class="brand-name">Pace Family</span>
 <% end %>
+
+<nav class="header-nav wa-cluster wa-gap-l" aria-label="Main">
+  <%= link_to "About", about_path %>
+  <%= link_to "Marwanbot", marwanbot_path %>
+  <%= link_to "Login", new_session_path unless authenticated? %>
+  <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+</nav>
+
+<wa-button data-toggle-nav appearance="plain" class="wa-mobile-only" aria-label="Open menu">
+  <wa-icon name="bars"></wa-icon>
+</wa-button>
+
+
+<%# link_to root_path, class: "wa-link-plain" do %>
+<!-- <div class="wa-cluster">
+   <wa-icon name="house-chimney-heart" family="sharp-duotone" variant="light" style="font-size: 2em;  --primary-color: rgb(116, 192, 252); --secondary-color: rgb(116, 192, 252);"></wa-icon>
+   <span class="wa-font-size-2xl wa-font-weight-bold">Pace Family</span>
+ </div>
+ <div class="wa-cluster">
+ -->
+   <%# link_to "About", about_path, class: "wa-link-plain wa-font-size-xl wa-font-weight-bold" %>
+   <%# link_to "Login", new_session_path, class: "wa-link-plain wa-font-size-xl wa-font-weight-bold" unless authenticated? %>
+   <%# button_to "Log out", session_path, method: :delete if authenticated? %>
+<!-- </div> -->
+<%# end %>

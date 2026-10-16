@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
   get "pages/home"
-  get "pages/about"
+  get "marwanbot", to: "pages#marwanbot"
   get "about", to: "pages#about"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
