@@ -4,88 +4,8 @@
     <p class="eyebrow">Welcome to pace.family</p>
     <h1 class="headline">A cozy little corner of the internet for <span class="highlight">the Paces</span>.</h1>
     <p class="lede">
-      Stories, photos, and updates shared with just the right people. Some posts are for everyone.
-      Most are just for family.
+      Updates, 40+ year old running jokes, Karate Kid, and Marwan.
     </p>
-    <div class="wa-cluster wa-gap-s">
-      <wa-button variant="brand" size="l" pill href="#latest">
-        Read the latest
-        <wa-icon slot="end" name="arrow-down"></wa-icon>
-      </wa-button>
-      <wa-button appearance="outlined" size="l" pill href="about.html">What is this?</wa-button>
-    </div>
-  </div>
-</section>
-
-<!-- Circles -->
-<section class="section tinted">
-  <div class="container wa-stack wa-gap-xl">
-    <div class="wa-stack wa-gap-s prose">
-      <h2>Every post has a circle</h2>
-      <p class="lede">You only see what's been shared with you. Log in to see your family's posts.</p>
-    </div>
-
-    <div class="wa-grid wa-gap-m circle-grid">
-      <wa-card class="circle-card">
-        <div class="wa-flank wa-gap-m wa-align-items-start">
-          <span class="circle-icon"><wa-icon name="globe" family="duotone" variant="solid"></wa-icon></span>
-          <div class="wa-stack wa-gap-2xs">
-            <h3>Everyone</h3>
-            <p>Public posts anyone can read.</p>
-          </div>
-        </div>
-      </wa-card>
-
-      <wa-card class="circle-card">
-        <div class="wa-flank wa-gap-m wa-align-items-start">
-          <span class="circle-icon"><wa-icon name="house-heart" family="duotone" variant="solid"></wa-icon></span>
-          <div class="wa-stack wa-gap-2xs">
-            <h3>Austin Paces</h3>
-            <p>Just the three of us at home.</p>
-          </div>
-        </div>
-      </wa-card>
-
-      <wa-card class="circle-card">
-        <div class="wa-flank wa-gap-m wa-align-items-start">
-          <span class="circle-icon"><wa-icon name="people-roof" family="duotone" variant="solid"></wa-icon></span>
-          <div class="wa-stack wa-gap-2xs">
-            <h3>Brothers &amp; Mom</h3>
-            <p>The original Pace crew.</p>
-          </div>
-        </div>
-      </wa-card>
-
-      <wa-card class="circle-card">
-        <div class="wa-flank wa-gap-m wa-align-items-start">
-          <span class="circle-icon"><wa-icon name="rings-wedding" family="duotone" variant="solid"></wa-icon></span>
-          <div class="wa-stack wa-gap-2xs">
-            <h3>In-laws</h3>
-            <p>Our family by marriage.</p>
-          </div>
-        </div>
-      </wa-card>
-
-      <wa-card class="circle-card">
-        <div class="wa-flank wa-gap-m wa-align-items-start">
-          <span class="circle-icon"><wa-icon name="people-group" family="duotone" variant="solid"></wa-icon></span>
-          <div class="wa-stack wa-gap-2xs">
-            <h3>Cousins</h3>
-            <p>The extended Pace clan.</p>
-          </div>
-        </div>
-      </wa-card>
-
-      <wa-card class="circle-card">
-        <div class="wa-flank wa-gap-m wa-align-items-start">
-          <span class="circle-icon"><wa-icon name="handshake-simple" family="duotone" variant="solid"></wa-icon></span>
-          <div class="wa-stack wa-gap-2xs">
-            <h3>Friends</h3>
-            <p>Friends who are basically family.</p>
-          </div>
-        </div>
-      </wa-card>
-    </div>
   </div>
 </section>
 
@@ -93,43 +13,45 @@
 <section class="section" id="latest">
   <div class="container wa-stack wa-gap-l">
     <div class="wa-split wa-align-items-end">
-      <h2>Latest from the family</h2>
+      <h2>Latest...</h2>
       <a href="#">All posts <wa-icon name="arrow-right"></wa-icon></a>
     </div>
 
     <ul class="post-list">
-      <li class="post-row wa-stack wa-gap-xs">
-        <div class="wa-cluster wa-gap-xs post-meta">
-          <wa-tag size="s" pill variant="brand">Everyone</wa-tag>
-          <span>October 12</span>
-        </div>
-        <h3><a href="#">Welcome to pace.family</a></h3>
-        <p>Why we built a little home on the web, and what you'll find here.</p>
-      </li>
+      <% @posts.each do |post| %>
+        <li class="post-row wa-stack wa-gap-xs">
+          <div class="wa-cluster wa-gap-xs post-meta">
+            <wa-tag size="s" pill variant="brand">Everyone</wa-tag>
+            <span><%= post.created_at.strftime("%B %-d") %></span>
+          </div>
+          <h3><a href="#">Welcome to pace.family</a></h3>
+          <p>Why we built a little home on the web, and what you'll find here.</p>
+        </li>
 
-      <li class="post-row wa-stack wa-gap-xs">
-        <div class="wa-cluster wa-gap-xs post-meta">
-          <wa-tag size="s" pill>
-            <wa-icon name="lock" variant="solid"></wa-icon>
-            Brothers &amp; Mom
-          </wa-tag>
-          <span>October 9</span>
-        </div>
-        <h3><a href="#">Sample family post title</a></h3>
-        <p>Log in to read posts shared with this circle.</p>
-      </li>
+        <li class="post-row wa-stack wa-gap-xs">
+          <div class="wa-cluster wa-gap-xs post-meta">
+            <wa-tag size="s" pill>
+              <wa-icon name="lock" variant="solid"></wa-icon>
+              Brothers &amp; Mom
+            </wa-tag>
+            <span>October 9</span>
+          </div>
+          <h3><a href="#">Sample family post title</a></h3>
+          <p>Log in to read posts shared with this circle.</p>
+        </li>
 
-      <li class="post-row wa-stack wa-gap-xs">
-        <div class="wa-cluster wa-gap-xs post-meta">
-          <wa-tag size="s" pill>
-            <wa-icon name="lock" variant="solid"></wa-icon>
-            Austin Paces
-          </wa-tag>
-          <span>October 3</span>
-        </div>
-        <h3><a href="#">Sample home post title</a></h3>
-        <p>Log in to read posts shared with this circle.</p>
-      </li>
+        <li class="post-row wa-stack wa-gap-xs">
+          <div class="wa-cluster wa-gap-xs post-meta">
+            <wa-tag size="s" pill>
+              <wa-icon name="lock" variant="solid"></wa-icon>
+              Austin Paces
+            </wa-tag>
+            <span>October 3</span>
+          </div>
+          <h3><a href="#">Sample home post title</a></h3>
+          <p>Log in to read posts shared with this circle.</p>
+        </li>
+      <% end %>
     </ul>
   </div>
 </section>
