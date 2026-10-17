@@ -9,12 +9,15 @@
   </div>
 </section>
 
-<!-- Latest posts (sample content) -->
+<!-- Latest posts -->
 <section class="section" id="latest">
   <div class="container wa-stack wa-gap-l">
     <div class="wa-split wa-align-items-end">
-      <h2>Latest...</h2>
-      <a href="#">All posts <wa-icon name="arrow-right"></wa-icon></a>
+      <h2>Latest posts...</h2>
+      <%= link_to posts_path, class: "wa-cluster wa-gap-xs" do %>
+        <span>All posts</span>
+        <wa-icon name="arrow-right"></wa-icon>
+      <% end %>
     </div>
 
     <ul class="post-list">
@@ -24,32 +27,8 @@
             <wa-tag size="s" pill variant="brand">Everyone</wa-tag>
             <span><%= post.created_at.strftime("%B %-d") %></span>
           </div>
-          <h3><a href="#">Welcome to pace.family</a></h3>
-          <p>Why we built a little home on the web, and what you'll find here.</p>
-        </li>
-
-        <li class="post-row wa-stack wa-gap-xs">
-          <div class="wa-cluster wa-gap-xs post-meta">
-            <wa-tag size="s" pill>
-              <wa-icon name="lock" variant="solid"></wa-icon>
-              Brothers &amp; Mom
-            </wa-tag>
-            <span>October 9</span>
-          </div>
-          <h3><a href="#">Sample family post title</a></h3>
-          <p>Log in to read posts shared with this circle.</p>
-        </li>
-
-        <li class="post-row wa-stack wa-gap-xs">
-          <div class="wa-cluster wa-gap-xs post-meta">
-            <wa-tag size="s" pill>
-              <wa-icon name="lock" variant="solid"></wa-icon>
-              Austin Paces
-            </wa-tag>
-            <span>October 3</span>
-          </div>
-          <h3><a href="#">Sample home post title</a></h3>
-          <p>Log in to read posts shared with this circle.</p>
+          <h3><%= link_to post.title, post %></h3>
+          <p><%= post.excerpt %></p>
         </li>
       <% end %>
     </ul>

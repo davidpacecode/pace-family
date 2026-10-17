@@ -13,10 +13,6 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @categories = []
-    Category.all.each do |category|
-      @categories << [category.name, category.id]
-    end
   end
 
   # GET /posts/1/edit
