@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html wa-theme-playful wa-palette-rudimentary wa-brand-purple data-fa-kit-code="dc8a27351f">
+  <head>
+    <title><%= content_for(:title) || "Pace Family" %></title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Pace Family">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all Web Awesome stuff %>
+    <!-- Theme + color palette -->
+    <link rel="stylesheet" href="https://ka-p.webawesome.com/kit/3f677cb7611c4757/webawesome@3.14.0/styles/themes/playful.css">
+    <link rel="stylesheet" href="https://ka-p.webawesome.com/kit/3f677cb7611c4757/webawesome@3.14.0/styles/color/palettes/rudimentary.css">
+
+    <!-- Utility classes ("CSS Utilities") -->
+    <link rel="stylesheet" href="https://ka-p.webawesome.com/kit/3f677cb7611c4757/webawesome@3.14.0/styles/utilities.css">
+
+    <!-- CSS reset ("Native Styles") -->
+    <link rel="stylesheet" href="https://ka-p.webawesome.com/kit/3f677cb7611c4757/webawesome@3.14.0/styles/native.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.bunny.net/css?family=nunito:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i,1000,1000i&display=swap">
+    <link rel="stylesheet" href="https://fonts.bunny.net/css?family=azeret-mono:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap">
+    <link rel="stylesheet" href="https://fonts.bunny.net/css?family=biorhyme:200,300,400,500,600,700,800&display=swap">
+
+    <!-- Web Awesome autoloader -->
+    <script type="module" src="https://ka-p.webawesome.com/kit/3f677cb7611c4757/webawesome@3.14.0/webawesome.loader.js"></script>
+
+    <!-- Custom theme overrides -->
+    <style>
+      :root {
+        --wa-font-family-body: Nunito, sans-serif;
+        --wa-font-family-heading: Fredoka, sans-serif;
+        --wa-font-family-code: "Azeret Mono", monospace;
+        --wa-font-family-longform: BioRhyme, serif;
+        --wa-font-weight-body: 500;
+        --wa-font-weight-heading: 600;
+        --wa-font-weight-code: 400;
+        --wa-font-weight-longform: 400;
+        --wa-border-radius-scale: 2;
+        --wa-border-width-scale: 3;
+        --wa-space-scale: 1;
+      }
+    </style>
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
