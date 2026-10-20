@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tags
+  resources :posts
   # original routes
   get "pages/home"
   get "pages/marwan"

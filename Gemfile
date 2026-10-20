@@ -71,3 +71,5 @@ end
 gem "herb", "~> 0.11.0"
 
 gem "reactionview", "~> 0.6.0"
+
+gem "lexxy", "~> 1.0"
