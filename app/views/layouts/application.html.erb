@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="wa-theme-playful wa-palette-rudimentary wa-brand-purple" data-fa-kit-code="dc8a27351f">
+<html class="wa-cloak wa-theme-playful wa-palette-rudimentary wa-brand-purple" data-fa-kit-code="dc8a27351f">
   <head>
     <title><%= content_for(:title) || "Pace Family" %></title>
 
@@ -67,6 +67,19 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <wa-page>
+      <header slot="header">
+        <%= render "layouts/header" %>
+      </header>
+
+      <main>
+        <%= yield %>
+      </main>
+
+      <footer slot="footer">
+        <%= render "layouts/footer" %>
+      </footer>
+    </wa-page>
   </body>
 </html>
