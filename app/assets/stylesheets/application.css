@@ -9,6 +9,9 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+header {
+  padding: var(--wa-space-m);
+}
 .nav-link {
   text-decoration: none;
   color: black;
@@ -21,3 +24,10 @@
 .nav-link.active {
   text-decoration: underline;
 }
+
+.wavy {
+  background: var(--wa-color-brand-fill-loud);   /* or any color */
+  color: var(--wa-color-brand-on-loud);
+  clip-path: shape(from 0 0,vline to calc(100% - 25px),curve to 5.56% calc(100% - 15.5px) with 3.7% calc(100% - 15px),smooth to 9.26% calc(100% - 9px),smooth to 12.96% calc(100% - 20px),smooth to 16.67% calc(100% - 44px),smooth to 20.37% calc(100% - 27.5px),smooth to 24.07% calc(100% - 20.5px),smooth to 27.78% calc(100% - 23.5px),smooth to 31.48% calc(100% - 10.5px),smooth to 35.19% calc(100% - 5.5px),smooth to 38.89% calc(100% - 9.5px),smooth to 42.59% calc(100% - 11.5px),smooth to 46.3% calc(100% - 20px),smooth to 50% calc(100% - 23px),smooth to 53.7% calc(100% - 28px),smooth to 57.41% calc(100% - 24.5px),smooth to 61.11% calc(100% - 25.5px),smooth to 64.81% calc(100% - 44.5px),smooth to 68.52% calc(100% - 31px),smooth to 72.22% calc(100% - 26.5px),smooth to 75.93% calc(100% - 23.5px),smooth to 79.63% calc(100% - 13.5px),smooth to 83.33% calc(100% - 26.5px),smooth to 87.04% calc(100% - 41px),smooth to 90.74% calc(100% - 28.5px),smooth to 94.44% calc(100% - 7.5px),smooth to 100% calc(100% - 25px),vline to 0, hline to 0);
+  padding: var(--wa-space-4xl);
+ }

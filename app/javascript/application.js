@@ -4,3 +4,4 @@ import "controllers"
 
 // for Lexxy!
 import "lexxy"
+import "reactionview"
