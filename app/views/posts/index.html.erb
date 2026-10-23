@@ -2,7 +2,14 @@
 
 <% content_for :title, "Posts" %>
 
-<h1>Posts</h1>
+<!-- <h1>Posts</h1> -->
+<div class="wa-cluster wa-gap-2xs" style="font-size: 2rem;">
+  <wa-icon name="p" animation="jello" style="color: salmon;"></wa-icon>
+  <wa-icon name="o" animation="shake" style="color: coral;"></wa-icon>
+  <wa-icon name="s" animation="spin-pulse" style="color: gold;"></wa-icon>
+  <wa-icon name="t" animation="flip-360" style="color: steelblue;"></wa-icon>
+  <wa-icon name="s" animation="flip" style="color: mediumpurple;"></wa-icon>
+</div>
 
 <div id="posts">
   <% @posts.each do |post| %>
