@@ -68,7 +68,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "herb", "~> 0.11.0"
+gem "herb", "~> 0.11.1"
 
 gem "reactionview", "~> 0.6.0"
 
