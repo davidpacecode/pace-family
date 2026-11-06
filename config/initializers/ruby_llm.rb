@@ -1,0 +1,7 @@
+
+require 'ruby_llm'
+
+RubyLLM.configure do |config|
+  config.gemini_api_key = ENV.fetch('GEMINI_API_KEY')
+  config.default_model = 'gemini-3.8-flash'
+end

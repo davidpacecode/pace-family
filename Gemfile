@@ -52,6 +52,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Adding dotenv-rails to enable use of .env
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -73,3 +76,5 @@ gem "herb", "~> 0.11.0"
 gem "reactionview", "~> 0.6.0"
 
 gem "lexxy", "~> 1.0"
+
+gem "ruby_llm", "= 2.1.1"
