@@ -77,4 +77,4 @@ gem "reactionview", "~> 0.6.0"
 
 gem "lexxy", "~> 1.0"
 
-gem "ruby_llm", "= 2.1.1"
+gem "ruby_llm", "2.2.0"
